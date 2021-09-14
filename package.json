@@ -1,0 +1,17 @@
+{
+  "name": "codesee-detect-languages-action",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "license": "Unlicensed",
+  "dependencies": {
+    "@actions/core": "^1.5.0",
+    "@actions/exec": "^1.1.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.31.1",
+    "simple-git": "^2.45.1"
+  },
+  "scripts": {
+    "build": "ncc build src/action.js --license licenses.txt"
+  }
+}
