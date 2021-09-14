@@ -1,0 +1,20 @@
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  test_detect_languages_action:
+    runs-on: ubuntu-latest
+    name: Run detect languages action on action code
+    steps:
+      - name: checkout
+        id: checkout
+        uses: actions/checkout@v2
+      - name: run
+        id: run
+        uses: ./
+      - name: Dump action output
+        env:
+          OUTPUT: ${{ toJSON(fromJSON(steps.run.outputs.languages)) }}
+        run: echo "$OUTPUT"
