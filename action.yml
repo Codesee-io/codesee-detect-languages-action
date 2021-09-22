@@ -1,5 +1,9 @@
 name: "CodeSee Detect Languages"
 description: "Detect languages before running CodeSee Map"
+author: CodeSee
 runs:
   using: "node12"
   main: "dist/index.js"
+branding:
+  icon: code
+  color: purple
