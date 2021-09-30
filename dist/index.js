@@ -1918,9 +1918,7 @@ async function removeNpmrc() {
         );
       }
     }
-  } catch (e) {
-    core.warning(`Unable to determine if .npmrc exists: ${e.message}`);
-  }
+  } catch (e) {}
 }
 
 async function main() {
