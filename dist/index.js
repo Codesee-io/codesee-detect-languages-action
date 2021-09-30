@@ -1806,14 +1806,6 @@ module.exports = require("fs");
 
 /***/ }),
 
-/***/ 225:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("fs/promises");
-
-/***/ }),
-
 /***/ 87:
 /***/ ((module) => {
 
@@ -1897,7 +1889,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(186);
 const exec = __nccwpck_require__(514);
-const fs = __nccwpck_require__(225);
+const fs = __nccwpck_require__(747).promises;
 
 async function runCodeseeDetectLanguages() {
   const execOptions = {

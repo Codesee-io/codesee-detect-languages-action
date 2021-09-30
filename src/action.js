@@ -1,6 +1,6 @@
 const core = require("@actions/core");
 const exec = require("@actions/exec");
-const fs = require("fs/promises");
+const fs = require("fs").promises;
 
 async function runCodeseeDetectLanguages() {
   const execOptions = {
