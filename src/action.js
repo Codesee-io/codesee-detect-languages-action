@@ -29,7 +29,9 @@ async function removeNpmrc() {
         );
       }
     }
-  } catch (e) {}
+  } catch (e) {
+    core.warning(`Unable to determine if .npmrc exists: ${e.message}`);
+  }
 }
 
 async function main() {
