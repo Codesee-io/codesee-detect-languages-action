@@ -18,7 +18,6 @@ async function runCodeseeDetectLanguages() {
 }
 
 async function removeNpmrc() {
-  core.info("Lookging for .npmrc");
   try {
     await fs.access(".npmrc");
 
@@ -27,17 +26,17 @@ async function removeNpmrc() {
       await fs.unlink(".npmrc");
     } catch (e) {
       core.error(
-        `.npmrc exists, but we couldn't remove it.\nThis may result in map language detection failing: ${e.message}`
+        `.npmrc exists, but we couldn't remove it.\nThis may result in language detection failing: ${e.message}`
       );
     }
   } catch (e) {
-    core.warning(`Unable to determine if .npmrc exists: ${e.message}`);
+    // Didn't find the .npmrc, so do nothing.
   }
 }
 
 async function main() {
   await core.group("Removing .npmrc if exists", removeNpmrc);
-  await core.group("Detect Languages", async () => runCodeseeDetectLanguages());
+  await core.group("Detect Languages", runCodeseeDetectLanguages);
 }
 
 main()
