@@ -1933,6 +1933,7 @@ main()
   .catch((err) => {
     core.info(`CodeSee Detect Languages failed: ${err}
     ${err.stack}`);
+    core.setOutput("languages", "{}"); // So the error is better
   });
 
 })();
