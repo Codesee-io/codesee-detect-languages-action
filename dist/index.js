@@ -1911,7 +1911,7 @@ async function removeNpmrc() {
     if (await fs.access(".npmrc")) {
       core.info("Found .npmrc, deleting from working tree");
       try {
-        fs.unlink(".npmrc");
+        await fs.unlink(".npmrc");
       } catch (e) {
         core.error(
           `.npmrc exists, but we couldn't remove it.\nThis may result in map language detection failing: ${e.message}`
