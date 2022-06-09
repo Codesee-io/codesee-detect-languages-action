@@ -11,7 +11,7 @@ async function runCodeseeDetectLanguages() {
     },
   };
 
-  const args = ["codesee", "detect-languages"];
+  const args = ["codesee@latest", "detect-languages"];
   const runExitCode = await exec.exec("npx", args, execOptions);
 
   return runExitCode;
