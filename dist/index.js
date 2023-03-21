@@ -4121,7 +4121,7 @@ async function runCodeseeDetectLanguages() {
     },
   };
 
-  const args = ["codesee@latest", "detect-languages"];
+  const args = ["codesee@0.532.0", "detect-languages"];
   const runExitCode = await exec.exec("npx", args, execOptions);
 
   return runExitCode;
